@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-// import { Comments } from '../../classes/comments';
-// import { AppComponent } from '../../app.component';
+import { Comments } from '../../classes/comments';
+import { AppComponent } from '../../app.component';
+import { FreeApiService } from '../../services/free-api.service';
 
 @Component({
   selector: 'app-users',
@@ -10,8 +11,8 @@ import { Component, OnInit } from '@angular/core';
 export class UsersComponent implements OnInit {
   // comments: Comments[];
 
-  constructor() { }
-
+  constructor(private freeApiService: FreeApiService) {}
+  listcomments: Comments[];
   ngOnInit() {
     // this.comments = [
     //   {
@@ -22,6 +23,11 @@ export class UsersComponent implements OnInit {
     //     body: string;
     //   }
     // ]
+    this.freeApiService.getcomments().subscribe(
+      data => {
+          this.listcomments = data;
+        }
+    );
   }
 
 }

@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// import { UsersComponent } from './components/users/users.component';
-// import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-// import { SidebarComponent } from './components/sidebar/sidebar.component';
-// import {RoutesConfig} from './configs/routes.config';
+import { UsersComponent } from './components/users/users.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { PostmethodComponent } from './components/postmethod/postmethod.component';
 
-// const routesNames = RoutesConfig.routesNames;
 
 
 const routes: Routes = [
-  // { path: '', component: UsersComponent },
-  // { path: 'sidebar', component: SidebarComponent },
-  // { path: '**', component: PagenotfoundComponent },
-  // {path: routesNames.home, component: UsersComponent, pathMatch: 'full'},
+  { path: 'getwithoutparam', component: UsersComponent },
+  { path: 'getwithparam', component: SidebarComponent },
+  { path: 'postmethod', component: PostmethodComponent },
+  { path: '**', component: PagenotfoundComponent },
+
 ];
 
 @NgModule({

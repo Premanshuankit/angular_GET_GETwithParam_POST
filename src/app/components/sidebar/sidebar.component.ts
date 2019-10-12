@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FreeApiService } from '../../services/free-api.service';
+import { Posts } from '../../classes/posts';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private freeApiService: FreeApiService) {}
 
+  listposts: Posts[];
   ngOnInit() {
+    this.freeApiService.getcommentsbyparameters().subscribe(
+      data => {
+        this.listposts = data;
+      }
+    );
   }
 
 }
