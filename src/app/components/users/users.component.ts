@@ -13,6 +13,12 @@ export class UsersComponent implements OnInit {
 
   constructor(private freeApiService: FreeApiService) {}
   listcomments: Comments[];
+  // inputText = 'Initial Value';
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
   ngOnInit() {
     // this.comments = [
     //   {
@@ -23,6 +29,7 @@ export class UsersComponent implements OnInit {
     //     body: string;
     //   }
     // ]
+
     this.freeApiService.getcomments().subscribe(
       data => {
           this.listcomments = data;

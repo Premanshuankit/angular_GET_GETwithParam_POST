@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 // import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 import { FreeApiService } from './services/free-api.service';
@@ -24,7 +25,8 @@ import { PostmethodComponent } from './components/postmethod/postmethod.componen
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [FreeApiService],
   bootstrap: [AppComponent]

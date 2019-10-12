@@ -15,6 +15,7 @@ export class AppComponent {
   listcomments: Comments[];
   listposts: Posts[];
   objposts: Posts;
+  isCollapsed = true;
   ngOnInit() {
     this.freeApiService.getcomments().subscribe(
       data => {
